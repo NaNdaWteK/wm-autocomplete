@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Autocomplete Web Component</title>
+    <script src="autocomplete.js"></script>
+    <style>
+      .wm-autocomplete{
+        margin: 1em;
+      }
+      .wm-autocomplete div.visible {
+        display:block;
+      }
+      .wm-autocomplete input {
+        height: 40px;
+        width: 240px;
+      }
+      .wm-autocomplete .autocomplete-results{
+        position: absolute;
+        display: none;
+        width: 244px;
+        background-color: #fff;
+      }
+      .wm-autocomplete .autocomplete-results p{
+        margin: 0;
+        padding: 0.5em;
+        border-bottom: 1px solid #c4c4c4;
+        border-left: 4px solid #BA9EB0;
+      }
+    </style>
+</head>
+<body>
+    <div class="wm-autocomplete array-autocomplete">
+      <input is="wm-autocomplete" type="text" name="names" placeholder="Find names autocomplete by array" parentclass="array-autocomplete" autocompletedata='["Carlos","Ana","Marlo","Rosa","Paco","Pepe", "Antonio", "Luis", "Marcos", "Olivia", "Pedro", "Javi", "Nacho"]'>
+    </div>
+    <div class="wm-autocomplete endpoint-autocomplete">
+      <input is="wm-autocomplete" type="text" name="countries" placeholder="Find countries autocomplete by endpoint" parentclass="endpoint-autocomplete" propertydata="name" autocompletedata="https://restcountries.eu/rest/v2/all?fields=name">
+    </div>
+</body>
+</html>
